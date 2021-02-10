@@ -5,7 +5,7 @@ class CreateTenants < ActiveRecord::Migration[6.0]
       t.text :address
       t.integer :rent
       t.integer :charges
-      t.references :owner, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
