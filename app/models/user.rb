@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-  # before_action :authenticate_user!
-  has_many :tenants
+  has_many :tenants, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :name, :address, presence: true
 end
