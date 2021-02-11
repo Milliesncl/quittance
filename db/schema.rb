@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_10_205800) do
 
   create_table "receipts", force: :cascade do |t|
-    t.string "period"
+    t.date "period"
     t.date "date"
     t.integer "tenant_id", null: false
     t.datetime "created_at", precision: 6, null: false

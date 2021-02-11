@@ -1,6 +1,6 @@
 class TenantsController < ApplicationController
   def index
-    @tenants = Tenant.all
+    @tenants = current_user.tenants
   end
 
   def new
@@ -43,4 +43,5 @@ class TenantsController < ApplicationController
     def tenant_params
       params.require(:tenant).permit(:name, :address, :rent, :charges)
     end
-  end
+
+end

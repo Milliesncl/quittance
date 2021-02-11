@@ -7,4 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, :address, presence: true
+
+  # scope :tenants -> () { where(user: current_user) }
 end

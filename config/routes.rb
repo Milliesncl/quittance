@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :tenants, except: [:show]
-  resources :receipts, except: [:delete, :edit, :update, :show]
+  resources :receipts, except: [:delete, :edit, :update]
 end
