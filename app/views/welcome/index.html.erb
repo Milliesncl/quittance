@@ -1,0 +1,6 @@
+<h1>Bonjour <%= current_user.name %></h1>
+<p>Voulez-vous générer une nouvelle quittance de loyer ?</p>
+<%= link_to "Nouvelle quittance", new_receipt_path %>
+<p>Ou ajouter un nouveau locataire ?</p>
+<%= link_to "Nouveau locataire", new_tenant_path %>
+
