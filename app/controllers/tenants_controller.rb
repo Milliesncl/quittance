@@ -9,6 +9,7 @@ class TenantsController < ApplicationController
 
   def create
     @tenant = Tenant.new(tenant_params)
+    @tenant.user_id = current_user.id
     if @tenant.save
       redirect_to tenants_path
     else

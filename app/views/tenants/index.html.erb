@@ -1,0 +1,11 @@
+<h1>Tous mes locataires</h1>
+<% @tenants.each do |tenant| %>
+  <ul>
+    <li><%= tenant.name %></li>
+    <li><%= tenant.address %></li>
+    <li><%= tenant.rent %>€</li>
+    <li><%= tenant.charges %>€</li>
+  </ul>
+<% end %>
+<%= link_to "Créer un nouveau locataire", new_tenant_path %>
+<%= link_to "Créer une quittance", new_receipt_path %>
