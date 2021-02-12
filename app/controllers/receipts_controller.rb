@@ -1,6 +1,6 @@
 class ReceiptsController < ApplicationController
   def index
-    @receipts = Receipt.all
+    @receipts = Receipt.order('tenant_id', 'date')
   end
 
   def show
