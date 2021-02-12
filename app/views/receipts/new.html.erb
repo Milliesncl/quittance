@@ -6,7 +6,5 @@
     <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id  %>
     <%= link_to "Ajouter un locataire", new_tenant_path %>
   </div>
-  <div class="task-btn">
-    <%= f.submit "Créer une quittance"%>
-  </div>
+    <%= f.submit "Créer une quittance", class: "btn"%>
 <% end %>
