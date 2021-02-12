@@ -9,7 +9,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body topmargin="0" leftmargin="0" rightmargin="0">
+    <%= render 'shared/navbar' %>
+    <div class= "container global-card">
+      <%= yield %>
+    </div>
   </body>
 </html>

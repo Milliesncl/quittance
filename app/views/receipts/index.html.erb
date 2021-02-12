@@ -1,6 +1,6 @@
-<h1>Toutes mes quittances de loyer</h1>
-<% @receipts.each do |receipt| %>
-  <li><%= receipt.tenant.id %></li>
-  <li><%= receipt.tenant.name %></li>
-  <li><%= receipt.date %></li>
-<% end %>
+  <h1><%= "Vos quittances".upcase %></h1>
+  <% @receipts.each do |receipt| %>
+    <li><%= receipt.tenant.id %></li>
+    <li><%= receipt.tenant.name %></li>
+    <li><%= receipt.date %></li>
+  <% end %>

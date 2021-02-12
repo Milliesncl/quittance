@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <div class="dropdown-content">
+          <p><%= link_to 'Mon compte', edit_user_registration_path %></p>
+          <p><%= link_to 'Gérer mes locataires', tenants_path %></p>
+          <p><%= link_to 'Historique des quittances', receipts_path %></p>
+          <p><%= link_to 'Générer une quittance', new_receipt_path %></p>
+      </div>
+    </div>
+</div>
+
