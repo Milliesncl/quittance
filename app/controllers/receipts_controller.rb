@@ -1,6 +1,7 @@
 class ReceiptsController < ApplicationController
   def index
     @receipts = Receipt.order('tenant_id', 'date')
+    @tenants = current_user.tenants
   end
 
   def show
@@ -17,7 +18,7 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
-    @tenants = Tenant.all
+    @tenants = current_user.tenants
   end
 
   def create

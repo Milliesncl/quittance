@@ -1,6 +1,18 @@
   <h1><%= "Vos quittances".upcase %></h1>
-  <% @receipts.each do |receipt| %>
-    <li><%= receipt.tenant.id %></li>
-    <li><%= receipt.tenant.name %></li>
-    <li><%= receipt.date %></li>
+
+  <% @tenants.each do |tenant| %>
+    <div class="card">
+      <%= tenant.name %>
+      <%= tenant.address %>
+      <% if tenant.receipt_ids.any? %>
+        <% tenant.receipts.each do |receipt| %>
+          <div class="card">
+            <%= I18n.l(receipt.period, format: "%B %Y", locale: :fr).upcase %>
+            <%= link_to "Télécharger", receipt_path(receipt, format: "pdf"), target: :blank, class: "btn" %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= "Pas de quittance de loyer" %>
+      <% end %>
+    </div>
   <% end %>
