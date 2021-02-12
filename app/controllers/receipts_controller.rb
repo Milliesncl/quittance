@@ -5,6 +5,14 @@ class ReceiptsController < ApplicationController
 
   def show
     @receipt = Receipt.find(params[:id])
+    @current_user = current_user
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReceiptPdf.new(@receipt, @current_user)
+        send_data pdf.render, filename: "quittance_#{@receipt.id}.pdf", type: 'application/pdf', disposition: 'inline'
+      end
+    end
   end
 
   def new

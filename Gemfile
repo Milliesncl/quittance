@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 gem 'devise'
 gem 'simple_form'
+gem 'prawn'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
