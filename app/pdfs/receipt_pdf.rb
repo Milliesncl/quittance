@@ -42,7 +42,7 @@ class ReceiptPdf < Prawn::Document
         move_down 10
         text "Reçu de: #{@receipt.tenant.name}"
         move_down 10
-        text "Payé le : #{I18n.l(@receipt.date.strftime, format: "%-d %B %Y", locale: :fr)}"
+        text "Payé le : #{I18n.l(@receipt.date, format: "%-d %B %Y", locale: :fr)}"
         move_down 10
         text "La somme de : #{@receipt.tenant.rent + @receipt.tenant.charges}€"
         move_down 10
@@ -52,9 +52,9 @@ class ReceiptPdf < Prawn::Document
         move_down 10
         text "Pour loyer et accessoires des locaux sis : #{@receipt.tenant.address}"
         move_down 10
-        pad_bottom(10) { text "En paiement du terme de : #{@receipt.period.strftime("%B %Y")}" }
+        pad_bottom(10) { text "En paiement du terme de : #{I18n.l(@receipt.period, format: "%B %Y", locale: :fr)}" }
         move_down 30
-        text "Signature : #{@current_user.name}, Fait le : #{Date.today.strftime("%-d %B %Y")}"
+        text "Signature : #{@current_user.name}, Fait le : #{I18n.l(Date.today, format: "%-d %B %Y", locale: :fr)}"
         move_down 120
         pad_bottom(10) { text "Le paiement de la présente n'emporte pas présomption de paiement des termes antérieurs. Cette quittance ou ce reçu annule tous les reçus qui auraient pu être donnés pour acompte versé sur le présent terme. En cas de congé précédemment donné, cette quittance ou ce reçu représenterait l'indémnité d'occupation et ne saurait être considéré comme un titre d'occupation. Sous réserve d'encaissement.", size: 10, color: "7a7a7a"}
       end

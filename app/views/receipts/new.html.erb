@@ -1,8 +1,8 @@
 <h1>Créer une quittance de loyer</h1>
 <%= simple_form_for [@receipt] do |f| %>
   <div class="form-group">
-    <%= f.input :period, label: false, placeholder: "Période", discard_day: true %>
-    <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true %>
+    <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
+    <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
     <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id  %>
     <%= link_to "Ajouter un locataire", new_tenant_path %>
   </div>
