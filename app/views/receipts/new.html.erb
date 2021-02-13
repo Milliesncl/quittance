@@ -1,10 +1,13 @@
 <h1>Créer une quittance de loyer</h1>
-<%= simple_form_for [@receipt] do |f| %>
-  <div class="form-group">
-    <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
-    <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
-    <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id  %>
-    <%= link_to "Ajouter un locataire", new_tenant_path %>
+<div class="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+  <div class="py-8 px-8 rounded-xl">
+    <%= simple_form_for [@receipt] do |f| %>
+        <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
+        <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
+        <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id  %>
+        <%= link_to "Ajouter un locataire", new_tenant_path %>
+      </div>
+        <%= f.submit "Créer une quittance", class: "btn"%>
+    <% end %>
   </div>
-    <%= f.submit "Créer une quittance", class: "btn"%>
-<% end %>
+</div>
