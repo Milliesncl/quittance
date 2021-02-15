@@ -2,11 +2,11 @@
 @tailwind utilities;
 @tailwind base;
 
-.btn-ple {
-  @apply rounded-md shadow inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700;
+.btn-1 {
+  @apply rounded-md shadow inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-300 hover:bg-blue-400;
 }
 
-.btn-wth {
-  @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50;
+.btn-2 {
+  @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-400 bg-white hover:bg-blue-200;
 }
 
