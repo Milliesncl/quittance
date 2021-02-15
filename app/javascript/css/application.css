@@ -11,5 +11,17 @@
 }
 
 .title {
-  @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  @apply text-3xl text-center uppercase text-blue-300 tracking-tight sm:text-4xl;
+}
+
+.form {
+  @apply overflow-hidden px-4 py-2 border border-gray shadow-md rounded sm:rounded-md;
+}
+
+.label {
+  @apply block text-sm;
+}
+
+.input {
+  @apply mt-1 focus:ring-blue-400 focus:border-blue-400 block w-full sm:text-sm;
 }
