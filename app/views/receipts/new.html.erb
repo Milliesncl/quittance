@@ -8,22 +8,16 @@
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6">
             <label for="period" class="label">Période</label>
-            <div class= "input">
-              <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
-            </div>
+              <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr, input_html: { class: "input-period" } %>
           </div>
           <div class="col-span-6">
             <label for="date" class="label">Date du paiement</label>
-            <div class= "input">
-              <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
-            </div>
+              <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr, input_html: { class: "input" } %>
           </div>
           <div class="col-span-6">
             <label for="tenant" class="label">Locataire</label>
-            <div class= "input">
-              <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id %>
-              <%= link_to "Ajouter un locataire", new_tenant_path, class: "text-blue-400" %>
-            </div>
+              <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id, input_html: { class: "input" } %>
+              <%= link_to "Ajouter un locataire", new_tenant_path, class: "text-blue-400 text-sm" %>
           </div>
       </div>
     </div>

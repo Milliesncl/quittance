@@ -23,5 +23,9 @@
 }
 
 .input {
-  @apply mt-1 focus:ring-blue-400 focus:border-blue-400 block w-full sm:text-sm;
+  @apply mt-1 focus:ring-blue-200 focus:border-blue-400 block w-full sm:text-sm;
+}
+
+.input-period {
+  @apply mt-1 focus:ring-blue-200 focus:border-blue-400 sm:text-sm;
 }

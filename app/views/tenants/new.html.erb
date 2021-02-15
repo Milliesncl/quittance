@@ -1,12 +1,34 @@
-<h1>Nouveau locataire</h1>
-<%= simple_form_for [@tenant] do |f| %>
-  <div class="form-group">
-    <%= f.input :name, label: false, as: :text, placeholder: "Nom" %>
-    <%= f.input :address, label: false, as: :text, placeholder: "Adresse" %>
-    <%= f.input :rent, label: false, as: :text, placeholder: "Loyer" %>
-    <%= f.input :charges, label: false, as: :text, placeholder: "Charges" %>
+<div class="max-w-7xl mx-auto mt-5 md:mt-0 border-gray md:col-span-2">
+  <div class="flex items-center mb-6 bg-white dark:bg-gray-900">
+    <h1 class="title">Nouveau locataire</h1>
   </div>
-  <div class="task-btn">
-    <%= f.submit "Ajouter un.e locataire"%>
+  <div class="form">
+    <div class="m-4 bg-white sm:p-6">
+      <%= simple_form_for [@tenant] do |f| %>
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6">
+            <label for="name" class="label">Prénom et nom</label>
+              <%= f.input :name, label: false, autocomplete: :name, placeholder: "Nom", input_html: { class: "input" } %>
+          </div>
+          <div class="col-span-6">
+            <label for="address" class="label">Adresse</label>
+              <%= f.input :address, label: false, as: :text, placeholder: "Adresse", input_html: { class: "input" } %>
+          </div>
+          <div class="col-span-3">
+            <label for="rent" class="label">Loyer (&euro;)</label>
+              <%= f.input :rent, label: false, as: :integer, wrapper: false, hint: false, placeholder: "Loyer", input_html: { class: "input" } %>
+          </div>
+          <div class="col-span-3">
+            <label for="charges" class="label">Charges (&euro;)</label>
+              <%= f.input :charges, label: false, as: :integer, placeholder: "Charges", input_html: { class: "input" } %>
+          </div>
+        </div>
+    </div>
   </div>
+    <div class="pb-8 px-4 sm:px-4 mt-6 lg:pb-8 lg:px-8 lg:flex lg:items-center">
+      <div class="inline-flex rounded-md shadow">
+        <%= f.submit "Ajouter un.e locataire", class: "btn-1" %>
+      </div>
+    </div>
 <% end %>
+</div>
