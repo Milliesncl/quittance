@@ -15,7 +15,7 @@
 }
 
 .form {
-  @apply overflow-hidden px-4 py-2 border border-gray-50 shadow-md rounded sm:rounded-md;
+  @apply overflow-hidden w-auto px-4 py-2 border border-gray-50 shadow-md rounded sm:rounded-md;
 }
 
 .label {
