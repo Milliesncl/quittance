@@ -1,9 +1,12 @@
-/* ./src/tailwind.css */
+ /*./src/tailwind.css*/
+@tailwind utilities;
 @tailwind base;
-@tailwind components;
 
-.btn {
-  @apply px-4 py-2 bg-blue-600 text-white rounded;
+.btn-ple {
+  @apply rounded-md shadow inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700;
 }
 
-@tailwind utilities;
+.btn-wth {
+  @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50;
+}
+

@@ -8,6 +8,7 @@ gem 'simple_form'
 gem 'prawn'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'font-awesome-sass'
+gem 'tailwindcss'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
