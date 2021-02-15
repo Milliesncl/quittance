@@ -1,13 +1,39 @@
-<h1>Créer une quittance de loyer</h1>
-<div class="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
-  <div class="py-8 px-8 rounded-xl">
-    <%= simple_form_for [@receipt] do |f| %>
-        <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
-        <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
-        <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id  %>
-        <%= link_to "Ajouter un locataire", new_tenant_path %>
+<div>
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:pt-8 pb-4 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <h1 class="title">Créer une quittance de loyer</h1>
+    </div>
+    <div class="max-w-7xl mx-auto mt-5 md:mt-0 md:col-span-2">
+      <div class="overflow-hidden sm:rounded-md">
+        <div class="px-4 py-5 bg-white sm:p-6">
+          <%= simple_form_for [@receipt] do |f| %>
+            <div class="grid grid-cols-6 gap-6">
+              <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                <label for="period" class="block text-sm font-medium text-blue-400">Période</label>
+                <div class= "mt-1 focus:ring-blue-400 focus:border-blue-400 block w-full sm:text-sm ">
+                  <%= f.input :period, label: false, placeholder: "Période", discard_day: true, locale: :fr %>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                <label for="date" class="block text-sm font-medium text-blue-400">Date du paiement</label>
+                <div class= "mt-1 focus:ring-blue-400 focus:border-blue-400 block w-full sm:text-sm ">
+                  <%= f.input :date, label: false, placeholder: "Date du paiement",  as: :date, html5: true, locale: :fr %>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-6 lg:col-span-1">
+                <label for="tenant" class="block text-sm font-medium text-blue-400">Locataire</label>
+                <div class= "mt-1 focus:ring-blue-400 focus:border-blue-400 block w-full sm:text-sm ">
+                  <%= f.association :tenant, label: false, placeholder: "Locataire", collection: current_user.tenants, :label_method => lambda { |tenant| "#{tenant.name} - #{tenant.address}" } , value_method: :id %>
+                  <%= link_to "Ajouter un locataire", new_tenant_path %>
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
-        <%= f.submit "Créer une quittance", class: "btn"%>
-    <% end %>
-  </div>
+        <div class="pb-8 px-4 sm:px-4 lg:pb-8 lg:px-8 lg:flex lg:items-center">
+          <div class="inline-flex rounded-md shadow">
+            <%= f.submit "Créer une quittance", class: "btn-1"%>
+          </div>
+        </div>
+        <% end %>
+    </div>
 </div>
