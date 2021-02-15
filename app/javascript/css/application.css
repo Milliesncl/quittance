@@ -29,3 +29,11 @@
 .input-period {
   @apply mt-1 focus:ring-blue-200 focus:border-blue-400 sm:text-sm;
 }
+
+.fa-pen {
+  @apply text-gray-400;
+}
+
+.text-md {
+  @apply font-semibold;
+}
