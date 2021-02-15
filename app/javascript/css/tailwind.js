@@ -19,6 +19,8 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      pink: '#e29578',
+      lightpink: '#ffddd2',
     },
     extend: {},
   },

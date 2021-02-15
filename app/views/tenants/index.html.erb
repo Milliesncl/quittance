@@ -6,8 +6,7 @@
     <div class="max-w px-4 py-4 mx-auto">
       <div class="sm:grid sm:grid-flow-row sm:gap-4 sm:grid-cols-3">
         <% @tenants.each do |tenant| %>
-
-        <div id="jh-stats-positive" class="flex flex-col justify-center mx-2 px-6 py-6 bg-white border border-gray-50 shadow rounded">
+        <div class="flex flex-col justify-center mx-2 px-6 py-6 bg-white border border-gray-50 shadow rounded">
           <div>
             <div class="flex items-center justify-end gray text-md">
               <%= link_to edit_tenant_path(tenant.id) do %>
