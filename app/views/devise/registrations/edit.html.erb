@@ -1,6 +1,6 @@
 <div class="max-w-7xl mx-auto mt-5 md:mt-0 border-gray md:col-span-2">
   <div class="text-center items-center mb-6 bg-white dark:bg-gray-900">
-    <h1 class="title">Edit <%= resource_name.to_s.humanize %></h1>
+    <h1 class="title">Editer mon compte</h1>
   </div>
 
   <div class="form">
@@ -19,20 +19,20 @@
           <% end %>
 
           <div class="col-span-6">
-            <%= f.label :password , class: "label"%> <i class= "label">(leave blank if you don't want to change it)</i>
+            <%= f.label :password, "Nouveau mot de passe", class: "label"%> <i class= "label">(laissez blanc si vous ne voulez pas changer)</i>
             <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
             <% if @minimum_password_length %>
-              <em class= "label"><%= @minimum_password_length %> characters minimum</em>
+              <em class= "label"><%= @minimum_password_length %> caractères minimum</em>
             <% end %>
           </div>
 
           <div class="col-span-6">
-            <%= f.label :password_confirmation , class: "label"%>
+            <%= f.label :password_confirmation, "Confirmez votre nouveau mot de passe" ,class: "label"%>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
           </div>
 
           <div class="col-span-6">
-            <%= f.label :current_password , class: "label"%> <i class= "label">(we need your current password to confirm your changes)</i>
+            <%= f.label :current_password, "Mot de passe actuel", class: "label"%> <i class= "label">(nous avons besoin de votre mot de passe actuel)</i>
             <%= f.password_field :current_password, autocomplete: "current-password", class: "input" %>
           </div>
       </div>
@@ -41,12 +41,12 @@
 
     <div class="text-center pb-8 px-4 sm:px-4 mt-6 lg:pb-8 lg:px-8 lg:items-center">
       <div class="inline-flex rounded-md shadow">
-        <%= f.submit "Update", class: "btn-1" %>
+        <%= f.submit "Mettre à jour", class: "btn-1" %>
       </div>
     <% end %>
 
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-2" %></p>
+      <p>Unhappy? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-2" %></p>
 
-      <%= link_to "Back", :back %>
+      <%= link_to "Retour", :back %>
     </div>
 </div>
