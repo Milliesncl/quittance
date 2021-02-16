@@ -1,6 +1,6 @@
 <div class="max-w-7xl mx-auto mt-5 md:mt-0 border-gray md:col-span-2">
   <div class="text-center items-center mb-6 bg-white dark:bg-gray-900">
-    <h1 class="title">Nouveau locataire</h1>
+    <h1 class="title">Editer un locataire - <%= @tenant.name %></h1>
   </div>
   <div class="form">
     <div class="m-4 bg-white sm:p-6">
@@ -12,7 +12,7 @@
           </div>
           <div class="col-span-6">
             <label for="address" class="label">Adresse</label>
-              <%= f.input :address, label: false, as: :search, placeholder: "Adresse", id: "tenant_address", input_html: { class: "input" } %>
+              <%= f.input :address, label: false, as: :search, autocomplete: :address, id: "tenant_address", input_html: { class: "input" } %>
           </div>
           <div class="col-span-3">
             <label for="rent" class="label">Loyer (&euro;)</label>
