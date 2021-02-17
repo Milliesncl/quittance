@@ -7,6 +7,7 @@
           <p><%= link_to 'Gérer mes locataires', tenants_path %></p>
           <p><%= link_to 'Historique des quittances', receipts_path %></p>
           <p><%= link_to 'Générer une quittance', new_receipt_path %></p>
+          <p><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %></p>
       </div>
     </div>
 </div>

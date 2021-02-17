@@ -21,7 +21,7 @@ class ReceiptPdf < Prawn::Document
   end
 
   def tenant_info
-    move_down 20
+    move_down 10
     bounding_box([280, 600], width: 250) do
       indent(10, 15) do
         pad_top(10) { text "Locataire :", left_margin: 10}
@@ -34,7 +34,7 @@ class ReceiptPdf < Prawn::Document
   end
 
   def receipt_info
-    move_down 20
+    move_down 10
     pad_top(10) { text "Quittance de loyer", align: :center, style: :bold, size: 20 }
     pad_bottom(20) { text "#{I18n.l(@receipt.period, format: "%B %Y", locale: :fr)}", align: :center }
     bounding_box([3, 440], width: 528) do
@@ -50,7 +50,8 @@ class ReceiptPdf < Prawn::Document
         text " - Loyer nu: #{@receipt.tenant.rent}€,"
         text " - charges: #{@receipt.tenant.charges}€"
         move_down 10
-        text "Pour loyer et accessoires des locaux sis : #{@receipt.tenant.address}"
+        text "Pour loyer et accessoires des locaux sis :"
+        text "#{@receipt.tenant.address}"
         move_down 10
         pad_bottom(10) { text "En paiement du terme de : #{I18n.l(@receipt.period, format: "%B %Y", locale: :fr)}" }
         move_down 30
