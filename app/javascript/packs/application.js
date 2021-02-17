@@ -20,6 +20,7 @@ import "../css/application.css";
 document.addEventListener("DOMContentLoaded", function(){
   var places = require('places.js');
   var placesAutoComplete = places({
-    container: document.querySelector('#tenant_address')
+    container: document.querySelector('#tenant_address'),
+    countries: ['fr'],
   });
 });
